@@ -4,12 +4,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from services.claude_service import generate_queries
 from services.search_service import search_profiles
 from services.ranking_service import rank_profiles
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # for now
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
